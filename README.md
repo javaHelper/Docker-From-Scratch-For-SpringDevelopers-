@@ -35,3 +35,12 @@ ubuntu        latest    4c2c87c6c36e   5 weeks ago     69.2MB
 hello-world   latest    46331d942d63   10 months ago   9.14kB
 prateekashtikar@Prateeks-MacBook-Pro Prateek %  
 ```
+
+# List of containers
+  
+```
+docker ps 
+```
+  
+  
+  
