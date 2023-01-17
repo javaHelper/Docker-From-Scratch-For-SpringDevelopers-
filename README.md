@@ -225,3 +225,13 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek %
 ```
 
 <img width="1008" alt="Screenshot 2023-01-17 at 2 40 43 PM" src="https://user-images.githubusercontent.com/54174687/212856628-db66d71d-9e77-41de-9ada-c59806333e8e.png">
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps 
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                  NAMES
+d9648a10a5c9   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:7070->80/tcp   nifty_golick
+
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker kill d96 
+d96
+
+```
