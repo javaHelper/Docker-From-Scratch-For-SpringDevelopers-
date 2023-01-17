@@ -39,7 +39,20 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek %
 # List of containers
   
 ```
-docker ps 
+docker ps
+  
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run ubuntu
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run ubuntu
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run ubuntu
+
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+32e0838a8766   ubuntu        "bash"     6 seconds ago   Exited (0) 5 seconds ago             naughty_curran
+7f413d4bf79a   ubuntu        "bash"     7 seconds ago   Exited (0) 6 seconds ago             crazy_boyd
+eb42ddc10a83   ubuntu        "bash"     9 seconds ago   Exited (0) 8 seconds ago             sharp_pascal
+697694fc0455   hello-world   "/hello"   9 minutes ago   Exited (0) 9 minutes ago             stoic_brown
+prateekashtikar@Prateeks-MacBook-Pro Prateek %   
 ```
   
   
