@@ -11,3 +11,18 @@ Note:
 --filter		    Provide filter values (e.g. 'label=<key>=<value>')
 --force , -f		Do not prompt for confirmation
 --volumes		    Prune volumes
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
+
+```
+docker run hello-world
+
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker images
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    46331d942d63   10 months ago   9.14kB
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
