@@ -263,3 +263,11 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek % docker logs d96
 172.17.0.1 - - [17/Jan/2023:09:10:38 +0000] "GET /favicon.ico HTTP/1.1" 404 555 "http://localhost:7070/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" "-"
 prateekashtikar@Prateeks-MacBook-Pro Prateek % 
 ```
+
+--------
+
+# Docker Volume Mapping 
+
+```
+
+```
