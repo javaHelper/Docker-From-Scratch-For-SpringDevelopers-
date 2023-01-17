@@ -142,3 +142,25 @@ d61384369b97   ubuntu    "bash"    5 minutes ago    Exited (0) 3 minutes ago    
 prateekashtikar@Prateeks-MacBook-Pro Prateek % docker start -ia stupefied_saha
 root@d61384369b97:/# 
 ```  
+  
+# Stop and Kill conatiners
+  
+```
+docker run -it --name=c1 ubuntu
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker stop c1
+c1
+  
+OR
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker kill c1   -> exited immediatetly.
+```
+  
+```
+ docker exec [conatiner-name] [command]
+
+To start a command on a running container 
+
+run -> creates new container & executes the command
+exec -> does the sililar thing on a running container 
+```  
