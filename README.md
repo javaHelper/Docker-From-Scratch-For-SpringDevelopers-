@@ -4,13 +4,15 @@
 docker system prune -af
 
 docker system prune -f
-```
+
 
 Note:
 --all ,   -a		Remove all unused images not just dangling ones
 --filter		    Provide filter values (e.g. 'label=<key>=<value>')
 --force , -f		Do not prompt for confirmation
 --volumes		    Prune volumes
+```
+
 
 ```
 prateekashtikar@Prateeks-MacBook-Pro Prateek % docker images
@@ -195,10 +197,15 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec -it c1 bash
 root@49561887f448:/# 
 ```  
 
+# nginx  
+  
 ```
 docker pull nginx
   
 docker pull nginx:perl
   
-docker run nginx  
+docker run -p 80:80 nginx
 ```  
+  
+<img width="1115" alt="Screenshot 2023-01-17 at 2 33 44 PM" src="https://user-images.githubusercontent.com/54174687/212854880-7e49429f-3304-4021-ac0f-498187c2af55.png">
+
