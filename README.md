@@ -129,3 +129,16 @@ CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                       
 d61384369b97   ubuntu    "bash"    3 minutes ago   Exited (0) About a minute ago             stupefied_saha
 prateekashtikar@Prateeks-MacBook-Pro Prateek % 
 ```
+  
+```
+ prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run -it --name=c1 ubuntu
+root@d293268f53f2:/# exit
+exit
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                     PORTS     NAMES
+d293268f53f2   ubuntu    "bash"    23 seconds ago   Exited (0) 4 seconds ago             c1
+d61384369b97   ubuntu    "bash"    5 minutes ago    Exited (0) 3 minutes ago             stupefied_saha
+
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker start -ia stupefied_saha
+root@d61384369b97:/# 
+```  
