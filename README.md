@@ -163,4 +163,34 @@ To start a command on a running container
 
 run -> creates new container & executes the command
 exec -> does the sililar thing on a running container 
+```
+  
+```
+  prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps 
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+49561887f448   ubuntu    "bash"    38 seconds ago   Up 37 seconds             c1
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec c1 date            
+Tue Jan 17 08:48:14 UTC 2023
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec c1 ls  
+bin
+boot
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+vinoth
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec -it c1 bash
+root@49561887f448:/# 
 ```  
