@@ -101,5 +101,26 @@ To start container interactive mode
 -t -> std-output / attached terminal
 ```
   
+# Remove All containers
   
+```
+  prateekashtikar@Prateeks-MacBook-Pro Prateek % docker system prune -f
+Deleted Containers:
+d2ad4cc8e0dc5e4e7abe58f4f50d907e264879a28d7f4525f38e7df18b013013
+0f7a9743af26f3d5ec878b1afda3fb9d848acea92a21e18d2ddbfc5928d3c670
+32e0838a87663bc1092b5a866c5daefd1e3b57b074a4253d04ebe4ab07ecb443
+7f413d4bf79ad564b7933716703fdda568e105ed4ebf90939051b578fda77d01
+eb42ddc10a83b28a7afd69ebea32ac0117df06d1c63543f14597fd5010e849ad
+697694fc0455a240e01486da553aca39abd27eda49ad9b032e6c977ec7cfb3cc
+
+Total reclaimed space: 0B
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+prateekashtikar@Prateeks-MacBook-Pro Prateek %   
+```
+  
+<img width="904" alt="Screenshot 2023-01-17 at 2 02 19 PM" src="https://user-images.githubusercontent.com/54174687/212847931-6d4a8212-1c77-4bc8-a21e-0239b414226c.png">
+
   
