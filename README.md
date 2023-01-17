@@ -53,6 +53,33 @@ CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                  
 eb42ddc10a83   ubuntu        "bash"     9 seconds ago   Exited (0) 8 seconds ago             sharp_pascal
 697694fc0455   hello-world   "/hello"   9 minutes ago   Exited (0) 9 minutes ago             stoic_brown
 prateekashtikar@Prateeks-MacBook-Pro Prateek %   
+  
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run ubuntu date
+Tue Jan 17 08:23:18 UTC 2023
+prateekashtikar@Prateeks-MacBook-Pro Prateek %  
+  
+  
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run ubuntu ls  
+bin
+boot
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+prateekashtikar@Prateeks-MacBook-Pro Prateek %   
 ```
   
   
