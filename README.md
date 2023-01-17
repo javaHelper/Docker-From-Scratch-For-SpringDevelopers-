@@ -194,3 +194,11 @@ vinoth
 prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec -it c1 bash
 root@49561887f448:/# 
 ```  
+
+```
+docker pull nginx
+  
+docker pull nginx:perl
+  
+docker run nginx  
+```  
