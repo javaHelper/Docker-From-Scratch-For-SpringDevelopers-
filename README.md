@@ -197,6 +197,8 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek % docker exec -it c1 bash
 root@49561887f448:/# 
 ```  
 
+--------------
+
 # nginx  
   
 ```
@@ -205,7 +207,21 @@ docker pull nginx
 docker pull nginx:perl
   
 docker run -p 80:80 nginx
+
+docker run -p 8080:80 nginx
+
+docker run -p 8090:80 nginx
 ```  
   
 <img width="1115" alt="Screenshot 2023-01-17 at 2 33 44 PM" src="https://user-images.githubusercontent.com/54174687/212854880-7e49429f-3304-4021-ac0f-498187c2af55.png">
 
+
+<img width="1032" alt="Screenshot 2023-01-17 at 2 38 48 PM" src="https://user-images.githubusercontent.com/54174687/212856224-59d47898-02e1-496c-a9ef-a977aab0f1d7.png">
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker run -d -p 7070:80 nginx
+d9648a10a5c99f3056b40eeffb45f3badb1d54a9d307a2d8227b34b4f3f5a1ac
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
+
+<img width="1008" alt="Screenshot 2023-01-17 at 2 40 43 PM" src="https://user-images.githubusercontent.com/54174687/212856628-db66d71d-9e77-41de-9ada-c59806333e8e.png">
