@@ -80,6 +80,25 @@ tmp
 usr
 var
 prateekashtikar@Prateeks-MacBook-Pro Prateek %   
+  
+
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
+CONTAINER ID   IMAGE         COMMAND    CREATED              STATUS                          PORTS     NAMES
+d2ad4cc8e0dc   ubuntu        "ls"       41 seconds ago       Exited (0) 40 seconds ago                 agitated_wing
+0f7a9743af26   ubuntu        "date"     About a minute ago   Exited (0) About a minute ago             eager_hofstadter
+32e0838a8766   ubuntu        "bash"     2 minutes ago        Exited (0) 2 minutes ago                  naughty_curran
+7f413d4bf79a   ubuntu        "bash"     2 minutes ago        Exited (0) 2 minutes ago                  crazy_boyd
+eb42ddc10a83   ubuntu        "bash"     2 minutes ago        Exited (0) 2 minutes ago                  sharp_pascal
+697694fc0455   hello-world   "/hello"   11 minutes ago       Exited (0) 11 minutes ago                 stoic_brown
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
+  
+```
+docker run -it ubuntu
+
+To start container interactive mode 
+-i -> std-input
+-t -> std-output / attached terminal
 ```
   
   
