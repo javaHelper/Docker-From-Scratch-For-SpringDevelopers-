@@ -123,4 +123,9 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek %
   
 <img width="904" alt="Screenshot 2023-01-17 at 2 02 19 PM" src="https://user-images.githubusercontent.com/54174687/212847931-6d4a8212-1c77-4bc8-a21e-0239b414226c.png">
 
-  
+```
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                          PORTS     NAMES
+d61384369b97   ubuntu    "bash"    3 minutes ago   Exited (0) About a minute ago             stupefied_saha
+prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
