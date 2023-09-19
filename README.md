@@ -1,5 +1,7 @@
 # Docker-From-Scratch-For-Spring-Developers-
 
+run command always creates brand new conatiner and exec 
+
 ```sh
 docker system prune -af
 
