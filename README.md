@@ -106,7 +106,7 @@ To start container interactive mode
 # Remove All containers
   
 ```
-  prateekashtikar@Prateeks-MacBook-Pro Prateek % docker system prune -f
+prateekashtikar@Prateeks-MacBook-Pro Prateek % docker system prune -f
 Deleted Containers:
 d2ad4cc8e0dc5e4e7abe58f4f50d907e264879a28d7f4525f38e7df18b013013
 0f7a9743af26f3d5ec878b1afda3fb9d848acea92a21e18d2ddbfc5928d3c670
@@ -130,6 +130,10 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek % docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                          PORTS     NAMES
 d61384369b97   ubuntu    "bash"    3 minutes ago   Exited (0) About a minute ago             stupefied_saha
 prateekashtikar@Prateeks-MacBook-Pro Prateek % 
+```
+
+```
+docker start -ia c1
 ```
   
 ```
