@@ -274,6 +274,5 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek %
 
 # Docker Volume Mapping 
 
-```
-
-```
+<img width="794" alt="Screenshot 2023-09-19 at 6 25 34 PM" src="https://github.com/javaHelper/Docker-From-Scratch-For-Spring-Developers-/assets/54174687/6fa9ee2c-4343-4dbd-a4d2-5739d41c7130">
+<img width="664" alt="Screenshot 2023-09-19 at 6 25 58 PM" src="https://github.com/javaHelper/Docker-From-Scratch-For-Spring-Developers-/assets/54174687/b0210c5f-9958-4019-ab0d-3c4758426164">
