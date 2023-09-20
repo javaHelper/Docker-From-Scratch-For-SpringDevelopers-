@@ -873,3 +873,28 @@ javac 17.0.2
 root@aea881ce5ba7:/java# 
 ```
 
+----------
+
+```Dockerfile
+FROM my-java-17
+
+WORKDIR /user/vinoth/table
+
+COPY Table.java Table.java
+
+CMD javac Table.java && java Table
+```
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker build -t my-table .
+
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-table 
+Received input : null
+
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run -e input=3  my-table
+Received input : 3
+1 * 3 = 3 
+2 * 3 = 6 
+3 * 3 = 9 
+```
+
