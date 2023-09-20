@@ -787,21 +787,21 @@ with ENTRYPOINT you can't override command line parameters
 ```
 prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker build -t my-hello-world-new .
 [+] Building 2.6s (9/9) FINISHED                                                                                                                         
- => [internal] load build definition from Dockerfile                                                                                                0.0s
- => => transferring dockerfile: 133B                                                                                                                0.0s
- => [internal] load .dockerignore                                                                                                                   0.0s
- => => transferring context: 2B                                                                                                                     0.0s
- => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                    2.5s
- => [auth] library/ubuntu:pull token for registry-1.docker.io                                                                                       0.0s
- => [1/3] FROM docker.io/library/ubuntu@sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054                                     0.0s
- => [internal] load build context                                                                                                                   0.0s
- => => transferring context: 32B                                                                                                                    0.0s
- => CACHED [2/3] WORKDIR /vins/welcome                                                                                                              0.0s
- => CACHED [3/3] ADD welcome.txt welcome.txt                                                                                                        0.0s
- => exporting to image                                                                                                                              0.0s
- => => exporting layers                                                                                                                             0.0s
- => => writing image sha256:9bec6b9d7f7a93ec199cca7958fcf5fb69c5258341387385628c3f151817ffb8                                                        0.0s
- => => naming to docker.io/library/my-hello-world-new                                                                                               0.0s
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 133B                                                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                 2.5s
+ => [auth] library/ubuntu:pull token for registry-1.docker.io                                                                                    0.0s
+ => [1/3] FROM docker.io/library/ubuntu@sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054                                  0.0s
+ => [internal] load build context                                                                                                                0.0s
+ => => transferring context: 32B                                                                                                                 0.0s
+ => CACHED [2/3] WORKDIR /vins/welcome                                                                                                           0.0s
+ => CACHED [3/3] ADD welcome.txt welcome.txt                                                                                                     0.0s
+ => exporting to image                                                                                                                           0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:9bec6b9d7f7a93ec199cca7958fcf5fb69c5258341387385628c3f151817ffb8                                                     0.0s
+ => => naming to docker.io/library/my-hello-world-new                                                                                            0.0s
 prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world-new
 Hello World !!!
 
@@ -812,4 +812,11 @@ I am learning Docker, so far great!%                                            
 Hello World !!!
 
 I am learning Docker, so far great!%                                                                                                                     prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % 
+```
+
+# Installing Java in Ubuntu container 
+
+
+```
+
 ```
