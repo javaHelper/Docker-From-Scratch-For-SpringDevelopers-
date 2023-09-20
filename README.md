@@ -276,3 +276,345 @@ prateekashtikar@Prateeks-MacBook-Pro Prateek %
 
 <img width="794" alt="Screenshot 2023-09-19 at 6 25 34 PM" src="https://github.com/javaHelper/Docker-From-Scratch-For-Spring-Developers-/assets/54174687/6fa9ee2c-4343-4dbd-a4d2-5739d41c7130">
 <img width="664" alt="Screenshot 2023-09-19 at 6 25 58 PM" src="https://github.com/javaHelper/Docker-From-Scratch-For-Spring-Developers-/assets/54174687/b0210c5f-9958-4019-ab0d-3c4758426164">
+
+-----
+
+# Network Demo
+
+```
+Docker-Learnings % docker run --name=nginx nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+155eab17d86c: Pull complete 
+b890a6ab7ff7: Pull complete 
+edde10874f47: Pull complete 
+d1969d2f2b2a: Pull complete 
+983d8b18b7de: Pull complete 
+50d0a268cf0b: Pull complete 
+4ff51b8992c4: Pull complete 
+Digest: sha256:6926dd802f40e5e7257fded83e0d8030039642e4e10c4a98a6478e9c6fe06153
+Status: Downloaded newer image for nginx:latest
+/docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+/docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+/docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+/docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+/docker-entrypoint.sh: Configuration complete; ready for start up
+2023/09/20 04:51:45 [notice] 1#1: using the "epoll" event method
+2023/09/20 04:51:45 [notice] 1#1: nginx/1.25.2
+2023/09/20 04:51:45 [notice] 1#1: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2023/09/20 04:51:45 [notice] 1#1: OS: Linux 5.15.49-linuxkit
+2023/09/20 04:51:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2023/09/20 04:51:45 [notice] 1#1: start worker processes
+2023/09/20 04:51:45 [notice] 1#1: start worker process 28
+2023/09/20 04:51:45 [notice] 1#1: start worker process 29
+2023/09/20 04:51:45 [notice] 1#1: start worker process 30
+2023/09/20 04:51:45 [notice] 1#1: start worker process 31
+172.17.0.3 - - [20/Sep/2023:04:57:46 +0000] "GET / HTTP/1.1" 200 615 "-" "curl/7.81.0" "-"
+```
+
+```
+Docker-Learnings % docker pull vinsdocker/util
+Using default tag: latest
+latest: Pulling from vinsdocker/util
+e96e057aae67: Pull complete 
+0f09a97e6dda: Pull complete 
+21d55e4ee19d: Pull complete 
+Digest: sha256:52b6fad81c3dc47ec6892d1f532fd9370b586691aea2413460b7b483886e7aa0
+Status: Downloaded newer image for vinsdocker/util:latest
+docker.io/vinsdocker/util:latest
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker ps 
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS     NAMES
+ac11bafa7e5e   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp    nginx
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run -it vinsdocker/util
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+root@4f334edaa0e5:/# ping nginx
+ping: nginx: Name or service not known
+root@4f334edaa0e5:/# ping google.com
+PING google.com (142.250.192.78) 56(84) bytes of data.
+
+^C
+--- google.com ping statistics ---
+32 packets transmitted, 0 received, 100% packet loss, time 31747ms
+
+root@4f334edaa0e5:/# ping http://www.google.com
+ping: http://www.google.com: Name or service not known
+root@4f334edaa0e5:/# ping google.com
+PING google.com (142.250.192.78) 56(84) bytes of data.
+64 bytes from bom12s16-in-f14.1e100.net (142.250.192.78): icmp_seq=1 ttl=37 time=10.0 ms
+64 bytes from bom12s16-in-f14.1e100.net (142.250.192.78): icmp_seq=2 ttl=37 time=15.5 ms
+64 bytes from bom12s16-in-f14.1e100.net (142.250.192.78): icmp_seq=3 ttl=37 time=14.1 ms
+^C
+--- google.com ping statistics ---
+4 packets transmitted, 3 received, 25% packet loss, time 3012ms
+rtt min/avg/max/mdev = 10.033/13.206/15.496/2.316 ms
+root@4f334edaa0e5:/# cat /etc/resolv.conf 
+# DNS requests are forwarded to the host. DHCP DNS options are ignored.
+nameserver 192.168.65.5
+ root@4f334edaa0e5:/# exit
+exit
+```
+
+
+<details open>
+  <summary>Inspect_Data</summary>
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker inspect nginx
+[
+    {
+        "Id": "ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f",
+        "Created": "2023-09-20T04:51:45.39318463Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 2878,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2023-09-20T04:51:45.763877464Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:91582cfffc2d0daa6f42adb6fb74665a047310f76a28e9ed5b0185a2d0f362a6",
+        "ResolvConfPath": "/var/lib/docker/containers/ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f/hostname",
+        "HostsPath": "/var/lib/docker/containers/ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f/hosts",
+        "LogPath": "/var/lib/docker/containers/ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f/ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f-json.log",
+        "Name": "/nginx",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/7df974ea8b3eb3d1b80643e43f53b1555fd417f8fa30d7bde907c88978965762-init/diff:/var/lib/docker/overlay2/deb103e577bcf3e25087e8b4dc6977e03f6f6c405649d6a4f882b8000014ee5c/diff:/var/lib/docker/overlay2/3f8474605e38c11787906452c3dbc189130a21ef09f6cb98084515e082e47b1c/diff:/var/lib/docker/overlay2/2de2f286a2f35773803aa1612d4bf7104707d566da953bb46bb57c200ed867f5/diff:/var/lib/docker/overlay2/0bb7f0260b4992777629f62cf7f6703160337f65d0dd0cd68297c23d5b67c6e0/diff:/var/lib/docker/overlay2/b2772b4e40e09b8bdfc66d49d3b3459f1158e523424ead0540609047558ba211/diff:/var/lib/docker/overlay2/54fb3007c1c059041495b2aa2c978cf9108b50fbc558cbb4f1e3425bc1d2fb42/diff:/var/lib/docker/overlay2/dc1b3833a6b729564a391789c7bb8d49fc6938b5427e5adc0d5b514154fc4391/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7df974ea8b3eb3d1b80643e43f53b1555fd417f8fa30d7bde907c88978965762/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7df974ea8b3eb3d1b80643e43f53b1555fd417f8fa30d7bde907c88978965762/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7df974ea8b3eb3d1b80643e43f53b1555fd417f8fa30d7bde907c88978965762/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "ac11bafa7e5e",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.25.2",
+                "NJS_VERSION=0.8.0",
+                "PKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers \u003cdocker-maint@nginx.com\u003e"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "3a44e7d4258e1f111c6ee25581cbde5138eb3a0bceda9de7cb45136df8a47845",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/3a44e7d4258e",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "7dcfdf404cb35dedafbc125514a5ff0d6235424a283ee0e0257b0af7bd17abd2",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "fb72946d3eff58f9b7129fac9437b6049793300cfb7c3b1a2dc85770ce90bc01",
+                    "EndpointID": "7dcfdf404cb35dedafbc125514a5ff0d6235424a283ee0e0257b0af7bd17abd2",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+</details>
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run -it vinsdocker/util
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+root@c6f716e8fd8f:/# ping 172.17.0.2
+PING 172.17.0.2 (172.17.0.2) 56(84) bytes of data.
+64 bytes from 172.17.0.2: icmp_seq=1 ttl=64 time=0.302 ms
+64 bytes from 172.17.0.2: icmp_seq=2 ttl=64 time=0.399 ms
+64 bytes from 172.17.0.2: icmp_seq=3 ttl=64 time=0.386 ms
+64 bytes from 172.17.0.2: icmp_seq=4 ttl=64 time=0.463 ms
+^C
+--- 172.17.0.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3013ms
+rtt min/avg/max/mdev = 0.302/0.387/0.463/0.057 ms
+root@c6f716e8fd8f:/# curl 172.17.0.2
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+root@c6f716e8fd8f:/#
+```
