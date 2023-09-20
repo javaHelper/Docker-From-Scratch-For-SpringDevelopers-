@@ -700,3 +700,63 @@ Commercial support is available at
 </html>
 root@a627cfdbb088:/# 
 ```
+
+# Building Hello World Image
+
+# Dockerfile
+```
+FROM ubuntu
+
+WORKDIR /vins/welcome
+
+ADD welcome.txt welcome.txt
+
+CMD cat welcome.txt
+```
+
+
+```
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker build -t my-hello-world .
+[+] Building 6.1s (9/9) FINISHED                                                                                                                         
+ => [internal] load build definition from Dockerfile                                                                                             0.0s
+ => => transferring dockerfile: 126B                                                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                                 3.6s
+ => [auth] library/ubuntu:pull token for registry-1.docker.io                                                                                    0.0s
+ => [internal] load build context                                                                                                                0.0s
+ => => transferring context: 90B                                                                                                                 0.0s
+ => [1/3] FROM docker.io/library/ubuntu@sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054                                  2.3s
+ => => resolve docker.io/library/ubuntu@sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054                                  0.0s
+ => => sha256:aabed3296a3d45cede1dc866a24476c4d7e093aa806263c27ddaadbdce3c1054 1.13kB / 1.13kB                                                   0.0s
+ => => sha256:94d12db896d07af18a04319f1023edd091629f558dcc29f84208a7cf5ca040ec 424B / 424B                                                       0.0s
+ => => sha256:6a47e077731f534f14de4df8639e35a1792a555b74e46920200ec05cb4af3d12 2.32kB / 2.32kB                                                   0.0s
+ => => sha256:20274425734a05472f3772bae7ce7124a9832f5eb168456d6cb53e92d6e718a8 27.35MB / 27.35MB                                                 1.6s
+ => => extracting sha256:20274425734a05472f3772bae7ce7124a9832f5eb168456d6cb53e92d6e718a8                                                        0.6s
+ => [2/3] WORKDIR /vins/welcome                                                                                                                  0.1s
+ => [3/3] ADD welcome.txt welcome.txt                                                                                                            0.0s
+ => exporting to image                                                                                                                           0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:b6a81a882c2dd3eeee543c57929dbffc3b9d21eafd1edf1562051deebbf9e19e                                                     0.0s
+ => => naming to docker.io/library/my-hello-world                                                                                                0.0s
+
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker images
+REPOSITORY       TAG       IMAGE ID       CREATED          SIZE
+my-hello-world   latest    b6a81a882c2d   17 seconds ago   69.2MB
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world
+Hello World !!!
+
+I am learning Docker, so far great!%                                                                                                                     prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world
+Hello World !!!
+
+I am learning Docker, so far great!
+
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker ps -a 
+CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS                      PORTS     NAMES
+161f302cd50d   my-hello-world   "/bin/sh -c 'cat wel…"   4 seconds ago    Exited (0) 3 seconds ago              naughty_bouman
+e8eafe31a977   my-hello-world   "/bin/sh -c 'cat wel…"   17 seconds ago   Exited (0) 17 seconds ago             interesting_fermi
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % 
+
+```
+
+
