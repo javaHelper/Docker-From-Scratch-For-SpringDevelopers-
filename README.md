@@ -846,3 +846,30 @@ javac 17.0.2
 root@aea881ce5ba7:/java# 
 ```
 
+
+```
+FROM ubuntu
+
+WORKDIR /java
+
+ADD https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-aarch64_bin.tar.gz java17.tar.gz
+
+RUN tar -xvzf java17.tar.gz
+
+RUN rm java17.tar.gz
+
+ENV PATH $PATH:/java/jdk-17.0.2/bin
+```
+
+```
+% docker build -t my-java-17 .
+% docker run -it my-java-17
+root@aea881ce5ba7:/java# java --version
+openjdk 17.0.2 2022-01-18
+OpenJDK Runtime Environment (build 17.0.2+8-86)
+OpenJDK 64-Bit Server VM (build 17.0.2+8-86, mixed mode, sharing)
+root@aea881ce5ba7:/java# javac --version
+javac 17.0.2
+root@aea881ce5ba7:/java# 
+```
+
