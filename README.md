@@ -897,4 +897,10 @@ Received input : 3
 2 * 3 = 6 
 3 * 3 = 9 
 ```
+------
 
+# How to push images
+
+```
+docker push <IMAGE NAME>
+```
