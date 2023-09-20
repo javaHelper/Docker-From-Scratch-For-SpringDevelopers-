@@ -362,6 +362,7 @@ exit
 <details open>
   <summary>Inspect_Data</summary>
 prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker inspect nginx
+```json  
 [
     {
         "Id": "ac11bafa7e5e5a8b59f0b7d86cd355b07bfda7ee1eee01947db59bfe9aef875f",
@@ -577,6 +578,7 @@ prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker inspect nginx
         }
     }
 ]
+```json
 </details>
 
 ```
