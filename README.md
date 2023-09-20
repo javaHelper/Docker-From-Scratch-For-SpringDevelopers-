@@ -756,7 +756,24 @@ CONTAINER ID   IMAGE            COMMAND                  CREATED          STATUS
 161f302cd50d   my-hello-world   "/bin/sh -c 'cat wel…"   4 seconds ago    Exited (0) 3 seconds ago              naughty_bouman
 e8eafe31a977   my-hello-world   "/bin/sh -c 'cat wel…"   17 seconds ago   Exited (0) 17 seconds ago             interesting_fermi
 prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % 
-
 ```
 
+# Exploring Our Image 
 
+```
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % vi Dockerfile 
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run -it my-hello-world bash
+root@9aed97a1f4c3:/vins/welcome# ls -l
+total 4
+-rw-r--r-- 1 root root 52 Sep 20 05:12 welcome.txt
+root@9aed97a1f4c3:/vins/welcome# exit
+exit
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world
+Hello World !!!
+
+I am learning Docker, so far great!%                                                                                                                     prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world date
+Wed Sep 20 05:27:08 UTC 2023
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % docker run my-hello-world ls  
+welcome.txt
+prateekashtikar@Prateeks-MacBook-Pro Docker-Learnings % 
+```
