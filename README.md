@@ -904,3 +904,9 @@ Received input : 3
 ```
 docker push <IMAGE NAME>
 ```
+
+# How to rename?
+
+```
+docker tag <IMAGE NAME> <NEW IMAGE NAME>:v1/v2 etc as per wish
+```
